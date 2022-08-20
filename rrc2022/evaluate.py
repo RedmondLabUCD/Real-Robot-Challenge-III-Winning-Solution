@@ -46,8 +46,8 @@ class PushExpertPolicy(TorchBasePolicy):
     """
 
     def __init__(self, action_space, observation_space, episode_length):
-        model_path = '/userhome/model_push_expert.pt'
-        json_path = '/userhome/json_push_expert.json'
+        model_path = '/userhome/model_push_exp.pt'
+        json_path = '/userhome/json_push_exp.json'
         print('loading the expert pushing model from ', model_path)
         super().__init__(action_space, observation_space, episode_length, model_path, json_path)
 
@@ -59,8 +59,8 @@ class LiftExpertPolicy(TorchBasePolicy):
     """
 
     def __init__(self, action_space, observation_space, episode_length):
-        model_path = '/userhome/model_lift_expert.pt'
-        json_path = '/userhome/json_lift_expert.json'
+        model_path = '/userhome/model_lift_exp.pt'
+        json_path = '/userhome/json_lift_exp.json'
         print('loading the expert lifting model from ', model_path)
         super().__init__(action_space, observation_space, episode_length, model_path, json_path)
 
