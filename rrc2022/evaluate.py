@@ -8,6 +8,9 @@ from d3rlpy.algos import IQL as algo
 import d3rlpy
 from . import policies
 
+model_name = 'model_8231044.pt'
+json_name = 'json_8231044.json'
+
 class TorchBasePolicy(PolicyBase):
     def __init__(
         self,
@@ -46,8 +49,8 @@ class PushExpertPolicy(TorchBasePolicy):
     """
 
     def __init__(self, action_space, observation_space, episode_length):
-        model_path = '/userhome/model_push_exp.pt'
-        json_path = '/userhome/json_push_exp.json'
+        model_path = f'/userhome/{model_name}'
+        json_path = f'/userhome/{json_name}'
         print('loading the expert pushing model from ', model_path)
         super().__init__(action_space, observation_space, episode_length, model_path, json_path)
 
@@ -59,8 +62,8 @@ class LiftExpertPolicy(TorchBasePolicy):
     """
 
     def __init__(self, action_space, observation_space, episode_length):
-        model_path = '/userhome/model_lift_exp.pt'
-        json_path = '/userhome/json_lift_exp.json'
+        model_path = f'/userhome/{model_name}'
+        json_path = f'/userhome/{json_name}'
         print('loading the expert lifting model from ', model_path)
         super().__init__(action_space, observation_space, episode_length, model_path, json_path)
 
@@ -71,8 +74,8 @@ class PushMixedPolicy(TorchBasePolicy):
     """
 
     def __init__(self, action_space, observation_space, episode_length):
-        model_path = '/userhome/model_push_mix.pt'
-        json_path = '/userhome/json_push_mix.json'
+        model_path = f'/userhome/{model_name}'
+        json_path = f'/userhome/{json_name}'
         print('loading the mixed pushing model from ', model_path)
         super().__init__(action_space, observation_space, episode_length, model_path, json_path)
 
@@ -84,7 +87,7 @@ class LiftMixedPolicy(TorchBasePolicy):
     """
 
     def __init__(self, action_space, observation_space, episode_length):
-        model_path = '/userhome/model_lift_mix.pt'
-        json_path = '/userhome/json_lift_mix.json'
+        model_path = f'/userhome/{model_name}'
+        json_path = f'/userhome/{json_name}'
         print('loading the mixed lifting model from ', model_path)
         super().__init__(action_space, observation_space, episode_length, model_path, json_path)
