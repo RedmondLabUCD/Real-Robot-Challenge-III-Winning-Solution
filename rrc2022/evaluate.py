@@ -9,7 +9,7 @@ import d3rlpy
 from . import policies
 
 model_name = 'model_8231044.pt'
-json_name = 'json_8231044.json'
+json_name = 'params_8231044.json'
 
 class TorchBasePolicy(PolicyBase):
     def __init__(
