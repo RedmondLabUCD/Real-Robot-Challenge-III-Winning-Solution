@@ -2,14 +2,15 @@
 import numpy as np
 import torch
 
+#import tianshou
 from rrc_2022_datasets import PolicyBase
 from d3rlpy.dataset import MDPDataset
 from d3rlpy.algos import IQL as algo
 import d3rlpy
 from . import policies
 
-model_name = 'model_8232331.pt'
-json_name = 'params_8232331.json'
+model_name = 'model_8241027.pt'
+json_name = 'params_8241027.json'
 
 class TorchBasePolicy(PolicyBase):
     def __init__(
