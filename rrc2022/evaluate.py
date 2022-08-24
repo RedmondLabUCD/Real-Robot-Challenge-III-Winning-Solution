@@ -9,8 +9,8 @@ from d3rlpy.algos import IQL as algo
 import d3rlpy
 from . import policies
 
-model_name = 'model_8241213.pt'
-json_name = 'params_8241213.json'
+model_name = 'model_8241247.pt'
+json_name = 'params_8241247.json'
 
 class TorchBasePolicy(PolicyBase):
     def __init__(
