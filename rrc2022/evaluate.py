@@ -5,7 +5,7 @@ import torch
 #import tianshou
 from rrc_2022_datasets import PolicyBase
 from d3rlpy.dataset import MDPDataset
-from d3rlpy.algos import PLAS as algo
+from d3rlpy.algos import PLASWithPerturbation as algo
 import d3rlpy
 from . import policies
 
