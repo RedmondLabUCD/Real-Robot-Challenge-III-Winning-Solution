@@ -5,12 +5,12 @@ import torch
 #import tianshou
 from rrc_2022_datasets import PolicyBase
 from d3rlpy.dataset import MDPDataset
-from d3rlpy.algos import IQL as algo
+from d3rlpy.algos import PLASWithPerturbation as algo
 import d3rlpy
 from . import policies
 
-model_name = 'model_8250055.pt'
-json_name = 'params_8250055.json'
+model_name = 'model_8250229.pt'
+json_name = 'params_8250229.json'
 
 class TorchBasePolicy(PolicyBase):
     def __init__(
