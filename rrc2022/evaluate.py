@@ -10,8 +10,8 @@ from d3rlpy.algos import BC as algo
 import d3rlpy
 from . import policies
 
-model_name = 'model_8250311.pt'
-json_name = 'params_8250311.json'
+model_name = 'model_8252335.pt'
+json_name = 'params_8252335.json'
 
 class TorchBasePolicy(PolicyBase):
     def __init__(
