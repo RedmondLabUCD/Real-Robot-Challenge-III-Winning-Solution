@@ -41,6 +41,7 @@ class TorchBasePolicy(PolicyBase):
     def get_action(self, observation):
         observation = torch.tensor(observation, dtype=torch.float, device=self.device)
         action = self.policy.predict([observation])[0]
+        print(action)
         return action
 
 
