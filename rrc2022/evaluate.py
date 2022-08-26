@@ -30,6 +30,7 @@ class TorchBasePolicy(PolicyBase):
         self.policy = algo.from_json(json_path)
         self.policy.load_model(model_path)
         self.action_space = action_space
+        print(action_space)
 
     @staticmethod
     def is_using_flattened_observations():
