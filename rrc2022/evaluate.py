@@ -10,11 +10,11 @@ from d3rlpy.algos import BC as algo
 import d3rlpy
 from . import policies
 
-obs = []
-act = []
-steps = 0
-model_name = 'model_lm_expert1.pt'
-json_name = 'params_lm_expert1.json'
+#obs = []
+#act = []
+#steps = 0
+model_name = 'model_std_aug.pt'
+json_name = 'params_std_aug.json'
 
 class TorchBasePolicy(PolicyBase):
     def __init__(
@@ -46,15 +46,15 @@ class TorchBasePolicy(PolicyBase):
         observation = torch.tensor(observation, dtype=torch.float, device=self.device)
         action = self.policy.predict([observation])[0]
         
-        global obs
-        global action
-        global steps
-        obs.append(observation.tolist())
-        action.append(action.tolist())
-        steps += 1 
-        if steps = 6000:
-            np.save('/output/obs.npy',np.array(obs))
-            np.save('/output/action.npy',np.array(action))
+        #global obs
+        #global action
+        #global steps
+        #obs.append(observation.tolist())
+        #action.append(action.tolist())
+        #steps += 1 
+        #if steps = 6000:
+            #np.save('/output/obs.npy',np.array(obs))
+            #np.save('/output/action.npy',np.array(action))
         return action
 
 
