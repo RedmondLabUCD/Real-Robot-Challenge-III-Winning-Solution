@@ -10,6 +10,9 @@ from d3rlpy.algos import BC as algo
 import d3rlpy
 from . import policies
 
+obs = []
+act = []
+steps = 0
 model_name = 'model_lm_expert1.pt'
 json_name = 'params_lm_expert1.json'
 
@@ -30,7 +33,7 @@ class TorchBasePolicy(PolicyBase):
         self.policy = algo.from_json(json_path)
         self.policy.load_model(model_path)
         self.action_space = action_space
-        print(action_space)
+        
 
     @staticmethod
     def is_using_flattened_observations():
@@ -42,7 +45,16 @@ class TorchBasePolicy(PolicyBase):
     def get_action(self, observation):
         observation = torch.tensor(observation, dtype=torch.float, device=self.device)
         action = self.policy.predict([observation])[0]
-        print(action)
+        
+        global obs
+        global action
+        global steps
+        obs.append(observation.tolist())
+        action.append(action.tolist())
+        steps += 1 
+        if steps = 6000:
+            np.save('/output/obs.npy',np.array(obs))
+            np.save('/output/action.npy',np.array(action))
         return action
 
 
