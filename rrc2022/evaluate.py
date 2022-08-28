@@ -53,7 +53,7 @@ class TorchBasePolicy(PolicyBase):
 
     def get_action(self, observation):
         if delete:
-            obs = obs_cutter(obs)
+            observation = obs_cutter(observation)
         observation = torch.tensor(observation, dtype=torch.float, device=self.device)
         action = self.policy.predict([observation])[0]
         
