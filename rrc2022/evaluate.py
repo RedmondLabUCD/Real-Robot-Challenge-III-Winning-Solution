@@ -22,8 +22,8 @@ def obs_cutter(obs):
     return obs
 
 delete = 1
-model_name = 'model_8281255.pt'
-json_name = 'params_8281255.json'
+model_name = 'model_8281610.pt'
+json_name = 'params_8281610.json'
 
 class TorchBasePolicy(PolicyBase):
     def __init__(
