@@ -13,8 +13,8 @@ from . import policies
 #obs = []
 #act = []
 #steps = 0
-model_name = 'model_std_aug.pt'
-json_name = 'params_std_aug.json'
+model_name = 'model_8281156.pt'
+json_name = 'params_8281156.json'
 
 class TorchBasePolicy(PolicyBase):
     def __init__(
