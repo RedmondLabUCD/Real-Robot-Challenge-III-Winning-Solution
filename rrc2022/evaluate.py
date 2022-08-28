@@ -13,6 +13,15 @@ from . import policies
 #obs = []
 #act = []
 #steps = 0
+indexes_1 = range(111,111+9+1+9+9)
+indexes_2 = range(59,59+1+1+24+4+3)
+
+def obs_cutter(obs):
+    obs = np.delete(obs, indexes_1)
+    obs = np.delete(obs, indexes_2)
+    return obs
+
+delete = 1
 model_name = 'model_8281255.pt'
 json_name = 'params_8281255.json'
 
@@ -43,6 +52,8 @@ class TorchBasePolicy(PolicyBase):
         pass  # nothing to do here
 
     def get_action(self, observation):
+         if delete:
+            obs = obs_cutter(obs)
         observation = torch.tensor(observation, dtype=torch.float, device=self.device)
         action = self.policy.predict([observation])[0]
         
