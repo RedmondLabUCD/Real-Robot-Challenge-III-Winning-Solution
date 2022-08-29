@@ -93,7 +93,8 @@ class TorchBasePolicy(PolicyBase):
         pass  # nothing to do here
 
     def get_action(self, observation):
-        action = self.policy(torch.Tensor([observation]).to(torch.float32)).detach().numpy()[0]
+        observation = torch.tensor(observation, dtype=torch.float, device=self.device)
+        action = self.policy([observation]).cpu().detach().numpy()[0]
         return action
 
 
