@@ -80,7 +80,7 @@ class TorchBasePolicy(PolicyBase):
         action_dim = model_dim[1]
 
         self.policy = BC(obs_dim=obs_dim, action_dim=action_dim)
-        self.policy.load_state_dict(torch.load(model_path))
+        self.policy.load_state_dict(torch.load(model_path,map_location=torch.device('cpu')))
         
         self.action_space = action_space
         
