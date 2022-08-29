@@ -75,7 +75,7 @@ class TorchBasePolicy(PolicyBase):
         self.action_space = action_space
         self.device = "cpu"
 
-        model_dim = np.load("/userhome/model_dim1.npy",allow_pickle=True)
+        model_dim = np.load("/userhome/model_dim.npy",allow_pickle=True)
         obs_dim = model_dim[0]
         action_dim = model_dim[1]
 
