@@ -22,7 +22,7 @@ def obs_cutter(obs):
     return obs
 
 delete = 0
-model_name = 'ckpt_8302209.pth'
+model_name = 'ckpt_8302338.pth'
 
 
 json_name = 'params_8261630.json'
