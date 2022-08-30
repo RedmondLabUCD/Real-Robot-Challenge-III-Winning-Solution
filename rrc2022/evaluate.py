@@ -93,9 +93,11 @@ class TorchBasePolicy(PolicyBase):
         pass  # nothing to do here
 
     def get_action(self, observation):
-        observation = torch.tensor(observation, dtype=torch.float, device=self.device)
-        action = self.policy([observation]).cpu().detach().numpy()[0]
-        return action
+        with torch.no_grad():
+            self.policy.eval()
+            observation = torch.Tensor([observation]).to(torch.float32)
+            action = self.policy(observation).cpu().detach().numpy()[0]
+            return action
 
 
 class PushExpertPolicy(TorchBasePolicy):
