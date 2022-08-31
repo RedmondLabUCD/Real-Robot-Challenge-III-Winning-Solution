@@ -24,7 +24,7 @@ def obs_cutter(obs):
 
 ############################
 delete = 0
-model_name = 'ckpt_s66_300.pth'
+model_name = 'ckpt_s13_300.pth'
 ############################
 
 
