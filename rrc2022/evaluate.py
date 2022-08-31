@@ -21,8 +21,11 @@ def obs_cutter(obs):
     obs = np.delete(obs, indexes_2)
     return obs
 
+
+############################
 delete = 0
-model_name = 'ckpt_8302338.pth'
+model_name = 'ckpt_s0_300.pth'
+############################
 
 
 json_name = 'params_8261630.json'
