@@ -24,7 +24,7 @@ def obs_cutter(obs):
 
 ############################
 delete = 0
-model_name = 'ckpt_filter_aug.pth'
+model_name = 'ckpt_aug_all.pth'
 ############################
 
 
