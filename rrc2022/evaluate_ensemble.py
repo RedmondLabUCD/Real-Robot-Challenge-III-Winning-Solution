@@ -99,8 +99,7 @@ class TorchBasePolicy(PolicyBase):
 
     def get_action(self, observation):
         with torch.no_grad():
-            self.policy.eval()
-            action,_ = ensumble_action(models, observation)
+            action,_ = ensumble_action(self.policys, observation)
             return action
 
 
