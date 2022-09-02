@@ -23,16 +23,19 @@ model_paths = []
 for model in models:
     model_paths.append(f'/userhome/{model}')
 
-def ensumble_action(models, obs, strategy='cta', device=torch.device('cpu')):
-    # obs = torch.Tensor([obs]).to(torch.float32).to(device)
-    actions = []
-    for model in models:
-        model.eval()
-        actions.append(model(obs).cpu().detach().numpy()[0])
-    
-    # print(actions)
-    temp_actions = np.array(copy(actions))
-    if strategy == 'cta':
+class ensumble():
+    def __init__(self,
+                 models,
+                 weight_ratio=0.1,
+                 device=torch.device('cpu')):
+        self.models = models
+        self.weight = [1] * len(self.models)
+        self.weight_ratio = weight_ratio
+        self.device = device
+        
+    def cta_action(self, obs):
+        actions = self.gen_actions(obs)
+        temp_actions = np.array(copy(actions))
         avg = temp_actions.mean(axis=0)
         for idx,action in enumerate(actions):
             if idx == 0:
@@ -44,12 +47,38 @@ def ensumble_action(models, obs, strategy='cta', device=torch.device('cpu')):
                     dis = np.linalg.norm(action - avg)
                     action_to_apply = action
                     action_to_apply_idx = idx
-                    
-    elif strategy == 'avg':
-        action_to_apply = temp_actions.mean(axis=0)
-        action_to_apply_idx = -1
-          
-    return action_to_apply, action_to_apply_idx
+        return action_to_apply, action_to_apply_idx
+    
+    def avg_action(self, obs):
+        actions = self.gen_actions(obs)
+        temp_actions = np.array(copy(actions))
+        return temp_actions.mean(axis=0), -1
+    
+    def weight_avg_action(self, obs):
+        actions = self.gen_actions(obs)
+        temp_actions = np.array(copy(actions))
+        avg = temp_actions.mean(axis=0)
+        for idx,action in enumerate(actions):
+            if idx == 0:
+                dis = np.linalg.norm(action - avg)
+                action_to_apply_idx = 0
+            else:
+                if np.linalg.norm(action - avg) <= dis:
+                    dis = np.linalg.norm(action - avg)
+                    action_to_apply_idx = idx
+        self.weight[idx] += self.weight_ratio
+        return np.average(temp_actions, axis=0,weights=self.weight), action_to_apply_idx
+    
+    def gen_actions(self, obs):
+        obs = torch.Tensor([obs]).to(torch.float32).to(self.device)
+        actions = []
+        for model in self.models:
+            model.eval()
+            actions.append(model(obs).cpu().detach().numpy()[0])
+        return actions
+    
+    def reset(self):
+        self.weight = [1] * len(self.models)
 
 class BC(nn.Module):
     def __init__(self, 
@@ -100,6 +129,7 @@ class TorchBasePolicy(PolicyBase):
             policy.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
             self.policys.append(copy(policy))
         self.action_space = action_space
+        self.esb = ensumble(self.policys, weight_ratio=2)
         
     @staticmethod
     def is_using_flattened_observations():
@@ -110,8 +140,8 @@ class TorchBasePolicy(PolicyBase):
 
     def get_action(self, observation):
         with torch.no_grad():
-            observation = torch.Tensor([observation]).to(torch.float32)
-            action,_ = ensumble_action(self.policys, observation, strategy="avg")
+            #observation = torch.Tensor([observation]).to(torch.float32)
+            action,_ = self.esb.avg_action(obs)
             return action
 
 
