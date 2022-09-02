@@ -91,7 +91,7 @@ class TorchBasePolicy(PolicyBase):
         self.policys = []
         for model_path in model_paths:
             policy = BC(obs_dim=obs_dim, action_dim=9)
-            policy.load_state_dict(torch.load(model_path), map_location=torch.device('cpu'))
+            policy.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
             self.policys.append(copy(policy))
         self.action_space = action_space
         
