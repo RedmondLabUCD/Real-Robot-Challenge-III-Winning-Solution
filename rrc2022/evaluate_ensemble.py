@@ -6,11 +6,16 @@ import numpy as np
 from copy import copy
 
 ############################
-models = ['ckpt_aug_all.pth',
-          'ckpt_aug_all.pth',
-          'ckpt_aug_all.pth',
-          'ckpt_aug_all.pth',
-          'ckpt_aug_all.pth']
+models = [
+          'lm_s0.pth',
+          'lm_s13.pth',
+          'lm_s66.pth',
+          'lm_s88.pth',
+          'lm_s180.pth',
+          'lm_s190.pth',
+          'lm_s234.pth',
+        #  'lm_s0.pth',
+         ]
 ############################
 
 model_paths = []
