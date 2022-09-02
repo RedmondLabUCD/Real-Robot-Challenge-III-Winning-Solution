@@ -76,8 +76,9 @@ class ensumble():
         obs = torch.Tensor([obs]).to(torch.float32).to(self.device)
         actions = []
         for model in self.models:
-            model.eval()
-            actions.append(model(obs).cpu().detach().numpy()[0])
+            with torch.no_grad():
+                model.eval()
+                actions.append(model(obs).cpu().detach().numpy()[0])
         return actions
     
     def reset(self):
@@ -142,10 +143,9 @@ class TorchBasePolicy(PolicyBase):
         pass  # nothing to do here
 
     def get_action(self, observation):
-        with torch.no_grad():
-            #observation = torch.Tensor([observation]).to(torch.float32)
-            action,_ = self.esb.avg_action(obs)
-            return action
+          #observation = torch.Tensor([observation]).to(torch.float32)
+        action,_ = self.esb.avg_action(obs)
+        return action
 
 
 class PushExpertPolicy(TorchBasePolicy):
