@@ -44,6 +44,11 @@ def ensumble_action(models, obs, strategy='cta', device=torch.device('cpu')):
                     dis = np.linalg.norm(action - avg)
                     action_to_apply = action
                     action_to_apply_idx = idx
+                    
+    elif strategy == 'avg':
+        action_to_apply = temp_actions.mean(axis=0)
+        action_to_apply_idx = -1
+          
     return action_to_apply, action_to_apply_idx
 
 class BC(nn.Module):
@@ -106,9 +111,7 @@ class TorchBasePolicy(PolicyBase):
     def get_action(self, observation):
         with torch.no_grad():
             observation = torch.Tensor([observation]).to(torch.float32)
-            t1 = time.time()
-            action,_ = ensumble_action(self.policys, observation)
-            print(time.time() - t1)
+            action,_ = ensumble_action(self.policys, strategy="avg", observation)
             return action
 
 
