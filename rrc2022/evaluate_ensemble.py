@@ -111,7 +111,7 @@ class TorchBasePolicy(PolicyBase):
     def get_action(self, observation):
         with torch.no_grad():
             observation = torch.Tensor([observation]).to(torch.float32)
-            action,_ = ensumble_action(self.policys, strategy="avg", observation)
+            action,_ = ensumble_action(self.policys, observation, strategy="avg")
             return action
 
 
