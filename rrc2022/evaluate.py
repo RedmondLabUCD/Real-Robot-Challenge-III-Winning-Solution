@@ -4,7 +4,7 @@ from rrc_2022_datasets import PolicyBase
 import torch.nn as nn
 
 ############################
-model_name = 'ckpt_aug_all.pth'
+model_name = 'lm_s0.pth'
 ############################
 
 
