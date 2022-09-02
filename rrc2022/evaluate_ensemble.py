@@ -15,7 +15,7 @@ models = [
           'lm_s180.pth',
           'lm_s190.pth',
           'lm_s234.pth',
-        #  'lm_s0.pth',
+          'lm_rdm.pth',
          ]
 ############################
 
