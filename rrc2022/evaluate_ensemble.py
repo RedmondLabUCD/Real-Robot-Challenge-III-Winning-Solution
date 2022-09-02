@@ -4,6 +4,7 @@ from rrc_2022_datasets import PolicyBase
 import torch.nn as nn
 import numpy as np
 from copy import copy
+import time
 
 ############################
 models = [
@@ -105,7 +106,9 @@ class TorchBasePolicy(PolicyBase):
     def get_action(self, observation):
         with torch.no_grad():
             observation = torch.Tensor([observation]).to(torch.float32)
+            t1 = time.time()
             action,_ = ensumble_action(self.policys, observation)
+            print(time.time() - t1)
             return action
 
 
