@@ -2,6 +2,7 @@
 import torch
 from rrc_2022_datasets import PolicyBase
 import torch.nn as nn
+import time
 
 ############################
 model_name = 'lm_rdm.pth'
@@ -65,7 +66,9 @@ class TorchBasePolicy(PolicyBase):
         with torch.no_grad():
             self.policy.eval()
             observation = torch.Tensor([observation]).to(torch.float32)
+            t1 = time.time()
             action = self.policy(observation).cpu().detach().numpy()[0]
+            print(time.time() - t1)
             return action
 
 
