@@ -144,7 +144,9 @@ class TorchBasePolicy(PolicyBase):
 
     def get_action(self, observation):
           #observation = torch.Tensor([observation]).to(torch.float32)
+        t1 = time.time()
         action,_ = self.esb.avg_action(observation)
+        print(time.time() - t1)
         return action
 
 
