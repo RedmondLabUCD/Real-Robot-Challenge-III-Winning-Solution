@@ -5,7 +5,7 @@ import torch.nn as nn
 import time
 
 ############################
-model_name = 'big_3.pth'
+model_name = 'big_2.pth'
 ############################
 
 
