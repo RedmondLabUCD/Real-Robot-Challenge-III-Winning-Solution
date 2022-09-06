@@ -20,24 +20,24 @@ class BC(nn.Module):
 
         super(BC, self).__init__()
         self.max_action = 0.397
-        self.net = nn.Sequential(nn.Linear(obs_dim, 256, bias=bias),
-                                nn.BatchNorm1d(256),
-                                nn.ReLU(),
-                                nn.Linear(256, 256, bias=bias),
-                                nn.BatchNorm1d(256),
-                                nn.ReLU(),
-                                nn.Linear(256, 256, bias=bias),
-                                nn.BatchNorm1d(256),
-                                nn.ReLU(),
-                                nn.Linear(256, 256, bias=bias),
-                                nn.BatchNorm1d(256),
-                                nn.ReLU(),
-                                nn.Linear(256, 128, bias=bias),
-                                nn.BatchNorm1d(128),
-                                nn.ReLU(),
-                                nn.Linear(128,action_dim, bias=bias),
-                                nn.Tanh(),
-                                )
+        self.net = nn.Sequential(nn.Linear(obs_dim, 512, bias=bias),
+                                 nn.BatchNorm1d(512),
+                                           nn.ReLU(),
+                                           nn.Linear(512, 512, bias=bias),
+                                           nn.BatchNorm1d(512),
+                                           nn.ReLU(),
+                                           nn.Linear(512, 256, bias=bias),
+                                           nn.BatchNorm1d(256),
+                                           nn.ReLU(),
+                                           nn.Linear(256, 256, bias=bias),
+                                           nn.BatchNorm1d(256),
+                                           nn.ReLU(),
+                                           nn.Linear(256, 128, bias=bias),
+                                           nn.BatchNorm1d(128),
+                                           nn.ReLU(),
+                                           nn.Linear(128,action_dim, bias=bias),
+                                           nn.Tanh(),
+                                           )
         
     def forward(self,x):
         x = self.net(x)
