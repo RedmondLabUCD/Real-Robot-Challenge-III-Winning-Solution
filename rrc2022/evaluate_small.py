@@ -5,7 +5,7 @@ import torch.nn as nn
 import time
 
 ############################
-model_name = 'lm_rdm.pth'
+model_name = 'small_1.pth'
 ############################
 
 
