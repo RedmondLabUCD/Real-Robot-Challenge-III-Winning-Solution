@@ -5,11 +5,11 @@ import torch.nn as nn
 import time
 
 ############################
-model_name = 'small_1.pth'
+model_name = 'big_1.pth'
 ############################
 
 
-class BC_big(nn.Module):
+class BC(nn.Module):
     """
     Build a SimSiam model.
     """
@@ -18,7 +18,7 @@ class BC_big(nn.Module):
                  action_dim = 9,
                  bias=True):
 
-        super(BC_big, self).__init__()
+        super(BC, self).__init__()
         self.max_action = 0.397
         self.net = nn.Sequential(nn.Linear(obs_dim, 256, bias=bias),
                                 nn.BatchNorm1d(256),
