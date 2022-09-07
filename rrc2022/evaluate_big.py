@@ -5,7 +5,7 @@ import torch.nn as nn
 import time
 
 ############################
-model_name = 'BC3_60.pth'
+model_name = 'BC4_60.pth'
 ############################
 
 
@@ -20,8 +20,14 @@ class BC(nn.Module):
 
         super(BC, self).__init__()
         self.max_action = 0.397
-        self.net = nn.Sequential(nn.Linear(obs_dim, 1024, bias=bias),
-                                 nn.BatchNorm1d(1024),
+        self.net = nn.Sequential(nn.Linear(obs_dim, 2048, bias=bias),
+                                 nn.BatchNorm1d(2048),
+                                           nn.ReLU(),
+                                           nn.Linear(2048, 2048, bias=bias),
+                                           nn.BatchNorm1d(2048),
+                                           nn.ReLU(),
+                                           nn.Linear(2048, 1024, bias=bias),
+                                           nn.BatchNorm1d(1024),
                                            nn.ReLU(),
                                            nn.Linear(1024, 1024, bias=bias),
                                            nn.BatchNorm1d(1024),
