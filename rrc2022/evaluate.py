@@ -5,7 +5,7 @@ import torch.nn as nn
 import time
 
 ############################
-model_name = 'lm_rdm.pth'
+model_name = 'lift_mix_best.pth'
 ############################
 
 
@@ -18,7 +18,7 @@ class BC(nn.Module):
         super(BC, self).__init__()
         self.max_action = 0.397
         self.net = nn.Sequential(nn.Linear(obs_dim, 256, bias=bias),
-                                           nn.BatchNorm1d(256),
+                                 nn.BatchNorm1d(256),
                                            nn.ReLU(),
                                            nn.Linear(256, 256, bias=bias),
                                            nn.BatchNorm1d(256),
@@ -66,9 +66,9 @@ class TorchBasePolicy(PolicyBase):
         with torch.no_grad():
             self.policy.eval()
             observation = torch.Tensor([observation]).to(torch.float32)
-            t1 = time.time()
+            #t1 = time.time()
             action = self.policy(observation).cpu().detach().numpy()[0]
-            print(time.time() - t1)
+            #print(time.time() - t1)
             return action
 
 
