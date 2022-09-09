@@ -6,7 +6,7 @@ import time
 import numpy as np
 
 ############################
-model_name = 'cutted_1.pth'
+model_name = 'cutted_2.pth'
 ############################
 
 
