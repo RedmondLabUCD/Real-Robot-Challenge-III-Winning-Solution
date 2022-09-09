@@ -5,7 +5,7 @@ import torch.nn as nn
 import time
 
 ############################
-model_name = 'lift_mix_best.pth'
+model_name = 'cutted_1.pth'
 ############################
 
 
@@ -46,7 +46,7 @@ class TorchBasePolicy(PolicyBase):
         self.action_space = action_space
         self.device = "cpu"
         if task_type == 'lift':
-            obs_dim = 139
+            obs_dim = 80
         elif task_type == 'push':
             obs_dim = 97
         else:
