@@ -3,6 +3,7 @@ import torch
 from rrc_2022_datasets import PolicyBase
 import torch.nn as nn
 import time
+import numpy as np
 
 ############################
 model_name = 'cutted_1.pth'
