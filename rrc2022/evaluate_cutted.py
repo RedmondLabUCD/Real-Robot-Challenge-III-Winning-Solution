@@ -73,7 +73,7 @@ class TorchBasePolicy(PolicyBase):
     def get_action(self, observation):
         with torch.no_grad():
             self.policy.eval()
-            observation = torch.Tensor([lift_obs_cutter(obs)]).to(torch.float32)
+            observation = torch.Tensor([lift_obs_cutter(observation)]).to(torch.float32)
             #t1 = time.time()
             action = self.policy(observation).cpu().detach().numpy()[0]
             #print(time.time() - t1)
