@@ -9,6 +9,14 @@ model_name = 'cutted_1.pth'
 ############################
 
 
+indexes_1 = range(111,111+9+1+9+9)
+indexes_2 = range(59,59+24+4+3)
+
+def lift_obs_cutter(obs):
+    obs = np.delete(obs, indexes_1)
+    obs = np.delete(obs, indexes_2)
+    return obs
+
 class BC(nn.Module):
     def __init__(self, 
                  obs_dim=97, 
@@ -65,7 +73,7 @@ class TorchBasePolicy(PolicyBase):
     def get_action(self, observation):
         with torch.no_grad():
             self.policy.eval()
-            observation = torch.Tensor([observation]).to(torch.float32)
+            observation = torch.Tensor([lift_obs_cutter(obs)]).to(torch.float32)
             #t1 = time.time()
             action = self.policy(observation).cpu().detach().numpy()[0]
             #print(time.time() - t1)
