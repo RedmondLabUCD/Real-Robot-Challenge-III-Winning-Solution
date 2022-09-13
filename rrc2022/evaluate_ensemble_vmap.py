@@ -56,7 +56,7 @@ for model in models_name:
 models = []
 for model_path in model_paths:
     model = BC(obs_dim=139, action_dim=9).to(torch.device('cpu'))
-    model.load(model_path, map_location=torch.device('cpu'))
+    model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
     model.eval()
     models.append(copy(model))
     
