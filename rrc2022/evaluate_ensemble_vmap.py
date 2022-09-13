@@ -35,13 +35,13 @@ class BC(nn.Module):
     
 ############################
 models_name = [
-          'lm_s0.pth',
-          'lm_s13.pth',
-          'lm_s66.pth',
-          'lm_s88.pth',
-          'lm_s100.pth',
-          'lm_s169.pth',
-          'lm_s180.pth',
+          #'lm_s0.pth',
+          #'lm_s13.pth',
+          #'lm_s66.pth',
+          #'lm_s88.pth',
+          #'lm_s100.pth',
+          #'lm_s169.pth',
+          #'lm_s180.pth',
           'lm_s190.pth',
           'lm_s234.pth',
           'lm_s255.pth',
