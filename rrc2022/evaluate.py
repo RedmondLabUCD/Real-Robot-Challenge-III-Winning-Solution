@@ -5,7 +5,7 @@ import torch.nn as nn
 import time
 
 ############################
-model_name = 'lift_mix_best.pth'
+model_name = 'ckpt_exp_914.pth'
 ############################
 
 
