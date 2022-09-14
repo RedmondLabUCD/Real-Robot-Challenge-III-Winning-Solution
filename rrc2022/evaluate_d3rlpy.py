@@ -10,8 +10,8 @@ from d3rlpy.algos import PLAS as algo
 import d3rlpy
 from . import policies
 
-model_name = 'plas_mix_raw.pt'
-json_name = 'plas_mix_raw.json'
+model_name = 'plas_lift_mix_merged.pt'
+json_name = 'plas_lift_mix_merged.json'
 
 class TorchBasePolicy(PolicyBase):
     def __init__(
