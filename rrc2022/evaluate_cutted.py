@@ -18,7 +18,7 @@ def lift_obs_cutter(obs):
     obs = np.delete(obs, indexes_2)
     return obs
 
-class BC_3(nn.Module):
+class BC(nn.Module):
     def __init__(self, 
                  obs_dim=97, 
                  action_dim = 9,
