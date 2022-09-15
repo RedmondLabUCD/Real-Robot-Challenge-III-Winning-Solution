@@ -25,7 +25,7 @@ class BC(nn.Module):
                  bias=True,
                  tune = False):
 
-        super(BC_3, self).__init__()
+        super(BC, self).__init__()
         self.max_action = 0.397
         self.net = nn.Sequential(nn.Linear(obs_dim, 512, bias=bias),
                                  nn.BatchNorm1d(512),
