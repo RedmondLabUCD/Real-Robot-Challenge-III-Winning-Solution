@@ -6,7 +6,7 @@ import time
 import numpy as np
 
 ############################
-model_name = 'cutted_2.pth'
+model_name = 'ckpt_cutted_bc3.pth'
 ############################
 
 
@@ -18,18 +18,22 @@ def lift_obs_cutter(obs):
     obs = np.delete(obs, indexes_2)
     return obs
 
-class BC(nn.Module):
+class BC_3(nn.Module):
     def __init__(self, 
                  obs_dim=97, 
                  action_dim = 9,
-                 bias=True):
+                 bias=True,
+                 tune = False):
 
-        super(BC, self).__init__()
+        super(BC_3, self).__init__()
         self.max_action = 0.397
-        self.net = nn.Sequential(nn.Linear(obs_dim, 256, bias=bias),
-                                 nn.BatchNorm1d(256),
+        self.net = nn.Sequential(nn.Linear(obs_dim, 512, bias=bias),
+                                 nn.BatchNorm1d(512),
                                            nn.ReLU(),
-                                           nn.Linear(256, 256, bias=bias),
+                                           nn.Linear(512, 512, bias=bias),
+                                           nn.BatchNorm1d(512),
+                                           nn.ReLU(),
+                                           nn.Linear(512, 256, bias=bias),
                                            nn.BatchNorm1d(256),
                                            nn.ReLU(),
                                            nn.Linear(256, 128, bias=bias),
@@ -38,6 +42,7 @@ class BC(nn.Module):
                                            nn.Linear(128,action_dim, bias=bias),
                                            nn.Tanh(),
                                            )
+
     def forward(self,x):
         x = self.net(x)
         x = self.max_action * x
