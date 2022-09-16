@@ -80,7 +80,7 @@ class TorchBasePolicy(PolicyBase):
             self.policy.eval()
             observation = torch.Tensor([observation]).to(torch.float32)
             #t1 = time.time()
-            action, self.h = self.policy(observation).cpu().detach().numpy()[0]
+            action, self.h = self.policy(observation, self.h).cpu().detach().numpy()[0]
             #print(time.time() - t1)
             return action
 
