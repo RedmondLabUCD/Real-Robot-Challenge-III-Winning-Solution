@@ -65,6 +65,7 @@ class TorchBasePolicy(PolicyBase):
         self.policy = BC(obs_dim=obs_dim, action_dim=9)
         self.policy.load_state_dict(torch.load(model_path,map_location=torch.device('cpu')))
         self.action_space = action_space
+        self.h = torch.zeros(1,64).to(torch.device('cpu'))
         
     @staticmethod
     def is_using_flattened_observations():
