@@ -5,7 +5,7 @@ import torch.nn as nn
 import numpy as np
 
 ############################
-model_name = 'ckpt_2_2_augtune.pth'
+model_name = 'ckpt_2_2_augtunenorm'
 norm_name = 'lift_mix_norm.npy'
 norm_mode = 'std'
 ############################
