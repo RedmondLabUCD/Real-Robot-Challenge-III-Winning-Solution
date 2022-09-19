@@ -33,10 +33,12 @@ dataset_type = "mixed"  # "expert or "mixed"
 #push_mixed_policy = "rrc2022.evaluate_d3rlpy.PushMixedPolicy"
 #lift_mixed_policy = "rrc2022.evaluate_d3rlpy.LiftMixedPolicy"
 
-push_expert_policy = "rrc2022.evaluate2.PushExpertPolicy"
-lift_expert_policy = "rrc2022.evaluate2.LiftExpertPolicy"
-push_mixed_policy = "rrc2022.evaluate2.PushMixedPolicy"
-lift_mixed_policy = "rrc2022.evaluate2.LiftMixedPolicy"
+#push_expert_policy = "rrc2022.evaluate2.PushExpertPolicy"
+#lift_expert_policy = "rrc2022.evaluate2.LiftExpertPolicy"
+#push_mixed_policy = "rrc2022.evaluate2.PushMixedPolicy"
+#lift_mixed_policy = "rrc2022.evaluate2.LiftMixedPolicy"
+
+lift_mixed_policy = "rrc2022.evaluate_lift_mix.LiftMixedPolicy"
 
 #push_expert_policy = "rrc2022.evaluate_ensemble_vmap.PushExpertPolicy"
 #lift_expert_policy = "rrc2022.evaluate_ensemble_vmap.LiftExpertPolicy"
