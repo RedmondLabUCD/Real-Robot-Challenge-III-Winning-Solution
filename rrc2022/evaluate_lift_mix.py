@@ -6,7 +6,7 @@ import numpy as np
 
 ############################
 model_name = 'ckpt_2_2_augtune.pth'
-norm_name = 'lift_mix_aug.npy'
+norm_name = 'lift_mix_norm.npy'
 norm_mode = 'std'
 ############################
 
