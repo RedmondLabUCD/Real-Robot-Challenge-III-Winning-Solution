@@ -39,7 +39,7 @@ dataset_type = "expert"  # "expert or "mixed"
 #lift_mixed_policy = "rrc2022.evaluate2.LiftMixedPolicy"
 
 lift_mixed_policy = "rrc2022.evaluate_lift_mix.LiftMixedPolicy"
-lift_expert_policy = "rrc2022.evaluate_lift_exp.LiftExpertPolicy"
+lift_expert_policy = "rrc2022.evaluate_lift_exp_norm.LiftExpertPolicy"
 
 
 #push_expert_policy = "rrc2022.evaluate_ensemble_vmap.PushExpertPolicy"
