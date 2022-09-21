@@ -1,5 +1,5 @@
 [rrc2022]
-task = "lift"  # "push" or "lift"
+task = "push"  # "push" or "lift"
 dataset_type = "expert"  # "expert or "mixed"
 
 # Specify a policy for each task/dataset_type combination.
@@ -40,7 +40,7 @@ dataset_type = "expert"  # "expert or "mixed"
 
 lift_mixed_policy = "rrc2022.evaluate_lift_mix.LiftMixedPolicy"
 lift_expert_policy = "rrc2022.evaluate_lift_exp_norm.LiftExpertPolicy"
-
+push_expert_policy = "rrc2022.evaluate_push_exp.PushExpertPolicy"
 
 #push_expert_policy = "rrc2022.evaluate_ensemble_vmap.PushExpertPolicy"
 #lift_expert_policy = "rrc2022.evaluate_ensemble_vmap.LiftExpertPolicy"
