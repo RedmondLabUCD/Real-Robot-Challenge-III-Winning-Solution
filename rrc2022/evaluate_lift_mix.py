@@ -5,7 +5,8 @@ import torch.nn as nn
 import time
 
 ############################
-model_name = 'ckpt_2_2_augtune.pth'
+#model_name = 'ckpt_2_2_augtune.pth'
+model_name = 'ckpt1_50.pth'
 ############################
 
 
