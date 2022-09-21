@@ -2,6 +2,13 @@
 task = "lift"  # "push" or "lift"
 dataset_type = "mixed"  # "expert or "mixed"
 
+#lift_mixed_policy = "rrc2022.evaluate_lift_mix.LiftMixedPolicy"
+
+lift_mixed_policy = "rrc2022.evaluate_lift_mix_norm.LiftMixedPolicy"
+lift_expert_policy = "rrc2022.evaluate_lift_exp_norm.LiftExpertPolicy"
+push_mixed_policy = "rrc2022.evaluate_push_mix_norm.PushExpertPolicy"
+push_expert_policy = "rrc2022.evaluate_push_exp_norm.PushExpertPolicy"
+
 # Specify a policy for each task/dataset_type combination.
 #push_expert_policy = "rrc2022.evaluate_ensemble.PushExpertPolicy"
 #lift_expert_policy = "rrc2022.evaluate_ensemble.LiftExpertPolicy"
@@ -38,10 +45,7 @@ dataset_type = "mixed"  # "expert or "mixed"
 #push_mixed_policy = "rrc2022.evaluate2.PushMixedPolicy"
 #lift_mixed_policy = "rrc2022.evaluate2.LiftMixedPolicy"
 
-lift_mixed_policy = "rrc2022.evaluate_lift_mix.LiftMixedPolicy"
-#lift_mixed_policy = "rrc2022.evaluate_lift_mix_norm.LiftMixedPolicy"
-lift_expert_policy = "rrc2022.evaluate_lift_exp_norm.LiftExpertPolicy"
-push_expert_policy = "rrc2022.evaluate_push_exp_norm.PushExpertPolicy"
+
 
 #push_expert_policy = "rrc2022.evaluate_ensemble_vmap.PushExpertPolicy"
 #lift_expert_policy = "rrc2022.evaluate_ensemble_vmap.LiftExpertPolicy"
