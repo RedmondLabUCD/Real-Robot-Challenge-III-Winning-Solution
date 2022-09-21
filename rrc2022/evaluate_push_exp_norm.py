@@ -5,7 +5,7 @@ import torch.nn as nn
 import numpy as np
 
 ############################
-model_name = 'push_expert_aug_tune_norm.pth'
+model_name = 'push_exp_raw_aug_tune_norm.pth'
 norm_name = 'push_expert_norm.npy'
 norm_mode = 'std'
 ############################
