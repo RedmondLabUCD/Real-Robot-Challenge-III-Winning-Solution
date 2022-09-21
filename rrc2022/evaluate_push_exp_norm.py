@@ -70,7 +70,7 @@ class TorchBasePolicy(PolicyBase):
         if task_type == 'lift':
             obs_dim = 139
         elif task_type == 'push':
-            obs_dim = 97
+            obs_dim = 96
         else:
             raise RuntimeError('The task type you input is invalid, only push and lift are avaliable')
         self.policy = BC(obs_dim=obs_dim, action_dim=9)
