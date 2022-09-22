@@ -7,7 +7,7 @@ dataset_type = "mixed"  # "expert or "mixed"
 lift_mixed_policy = "rrc2022.evaluate_lift_mix_norm.LiftMixedPolicy"
 lift_expert_policy = "rrc2022.evaluate_lift_exp_norm.LiftExpertPolicy"
 push_mixed_policy = "rrc2022.evaluate_push_mix_norm.PushExpertPolicy"
-push_expert_policy = "rrc2022.evaluate_push_exp_norm.PushExpertPolicy"
+push_expert_policy = "rrc2022.evaluate_push_exp_norm.PushMixedPolicy"
 
 # Specify a policy for each task/dataset_type combination.
 #push_expert_policy = "rrc2022.evaluate_ensemble.PushExpertPolicy"
