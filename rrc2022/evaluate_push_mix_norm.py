@@ -5,7 +5,7 @@ import torch.nn as nn
 import numpy as np
 
 ############################
-model_name = 'push_mix_raw_aug_tune_norm.pth'
+model_name = 'push_mix_aug_tune_norm.pth'
 norm_name = 'push_mix_norm.npy'
 norm_mode = 'std'
 ############################
