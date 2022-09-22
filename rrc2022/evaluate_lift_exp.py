@@ -7,7 +7,7 @@ import torch.nn as nn
 import time
 
 ############################
-model_name = 'le_aug_tune.pth'
+model_name = 'lift_exp_aug_tune.pth'
 ############################
 
 
