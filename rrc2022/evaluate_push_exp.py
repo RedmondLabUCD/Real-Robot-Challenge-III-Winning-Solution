@@ -5,7 +5,7 @@ import torch.nn as nn
 import time
 
 ############################
-model_name = 'push_exp_raw_aug_tune.pth'
+model_name = 'push_exp_aug_tune.pth'
 ############################
 
 
