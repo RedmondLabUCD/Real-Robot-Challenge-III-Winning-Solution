@@ -1,0 +1,62 @@
+[rrc2022]
+task = "push"  # "push" or "lift"
+dataset_type = "mixed"  # "expert or "mixed"
+
+#lift_mixed_policy = "rrc2022.evaluate_lift_mix.LiftMixedPolicy"
+#lift_expert_policy = "rrc2022.evaluate_lift_exp.LiftExpertPolicy"
+
+push_mixed_policy = "rrc2022.evaluate_push_mix.PushMixedPolicy"
+push_expert_policy = "rrc2022.evaluate_push_exp.PushExpertPolicy"
+lift_mixed_policy = "rrc2022.evaluate_lift_mix_norm.LiftMixedPolicy"
+lift_expert_policy = "rrc2022.evaluate_lift_exp_norm.LiftExpertPolicy"
+
+#push_mixed_policy = "rrc2022.evaluate_push_mix_norm.PushMixedPolicy"
+#push_expert_policy = "rrc2022.evaluate_push_exp_norm.PushExpertPolicy"
+
+# Specify a policy for each task/dataset_type combination.
+#push_expert_policy = "rrc2022.evaluate_ensemble.PushExpertPolicy"
+#lift_expert_policy = "rrc2022.evaluate_ensemble.LiftExpertPolicy"
+#push_mixed_policy = "rrc2022.evaluate_ensemble.PushMixedPolicy"
+#lift_mixed_policy = "rrc2022.evaluate_ensemble.LiftMixedPolicy"
+
+#push_expert_policy = "rrc2022.evaluate.PushExpertPolicy"
+#lift_expert_policy = "rrc2022.evaluate.LiftExpertPolicy"
+#push_mixed_policy = "rrc2022.evaluate.PushMixedPolicy"
+#lift_mixed_policy = "rrc2022.evaluate.LiftMixedPolicy"
+
+#push_expert_policy = "rrc2022.evaluate_small.PushExpertPolicy"
+#lift_expert_policy = "rrc2022.evaluate_small.LiftExpertPolicy"
+#push_mixed_policy = "rrc2022.evaluate_small.PushMixedPolicy"
+#lift_mixed_policy = "rrc2022.evaluate_small.LiftMixedPolicy"
+
+#push_expert_policy = "rrc2022.evaluate_big.PushExpertPolicy"
+#lift_expert_policy = "rrc2022.evaluate_big.LiftExpertPolicy"
+#push_mixed_policy = "rrc2022.evaluate_big.PushMixedPolicy"
+#lift_mixed_policy = "rrc2022.evaluate_big.LiftMixedPolicy"
+
+#push_expert_policy = "rrc2022.evaluate_cutted.PushExpertPolicy"
+#lift_expert_policy = "rrc2022.evaluate_cutted.LiftExpertPolicy"
+#push_mixed_policy = "rrc2022.evaluate_cutted.PushMixedPolicy"
+#lift_mixed_policy = "rrc2022.evaluate_cutted.LiftMixedPolicy"
+
+#push_expert_policy = "rrc2022.evaluate_d3rlpy.PushExpertPolicy"
+#lift_expert_policy = "rrc2022.evaluate_d3rlpy.LiftExpertPolicy"
+#push_mixed_policy = "rrc2022.evaluate_d3rlpy.PushMixedPolicy"
+#lift_mixed_policy = "rrc2022.evaluate_d3rlpy.LiftMixedPolicy"
+
+#push_expert_policy = "rrc2022.evaluate2.PushExpertPolicy"
+#lift_expert_policy = "rrc2022.evaluate2.LiftExpertPolicy"
+#push_mixed_policy = "rrc2022.evaluate2.PushMixedPolicy"
+#lift_mixed_policy = "rrc2022.evaluate2.LiftMixedPolicy"
+
+
+
+#push_expert_policy = "rrc2022.evaluate_ensemble_vmap.PushExpertPolicy"
+#lift_expert_policy = "rrc2022.evaluate_ensemble_vmap.LiftExpertPolicy"
+#push_mixed_policy = "rrc2022.evaluate_ensemble_vmap.PushMixedPolicy"
+#lift_mixed_policy = "rrc2022.evaluate_ensemble_vmap.LiftMixedPolicy"
+
+#push_expert_policy = "rrc2022.evaluate_rnnbc.PushExpertPolicy"
+#lift_expert_policy = "rrc2022.evaluate_rnnbc.LiftExpertPolicy"
+#push_mixed_policy = "rrc2022.evaluate_rnnbc.PushMixedPolicy"
+#lift_mixed_policy = "rrc2022.evaluate_rnnbc.LiftMixedPolicy"
