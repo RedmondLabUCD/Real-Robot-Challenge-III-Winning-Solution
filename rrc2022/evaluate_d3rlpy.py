@@ -9,6 +9,7 @@ from d3rlpy.dataset import MDPDataset
 from d3rlpy.algos import PLAS as algo
 import d3rlpy
 from . import policies
+import time
 
 model_name = 'model_925plas_50.pt.pt'
 json_name = 'params_925plas.json'
@@ -41,7 +42,9 @@ class TorchBasePolicy(PolicyBase):
 
     def get_action(self, observation):
         observation = torch.tensor(observation, dtype=torch.float, device=self.device)
+        t1 = time.time()
         action = self.policy.predict([observation])[0]
+        print(time.time()-t1)
         return action
 
 
