@@ -11,7 +11,7 @@ import d3rlpy
 from . import policies
 import time
 
-model_name = 'model_925plas_50.pt.pt'
+model_name = 'model_925plas_50.pt'
 json_name = 'params_925plas.json'
 
 class TorchBasePolicy(PolicyBase):
