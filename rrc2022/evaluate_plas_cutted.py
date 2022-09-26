@@ -49,8 +49,7 @@ class TorchBasePolicy(PolicyBase):
         pass  # nothing to do here
 
     def get_action(self, observation):
-        observation = torch.Tensor([lift_obs_cutter(observation)]).to(torch.float32)
-        print(observation.shape)
+        observation = lift_obs_cutter(observation)
         action = self.policy.predict([observation])[0]
         return action
 
