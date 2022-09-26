@@ -11,8 +11,8 @@ import d3rlpy
 from . import policies
 import time
 
-model_name = 'model_plas_obs128.pt'
-json_name = 'params_plas_obs128.json'
+model_name = 'model_plas_obs138.pt'
+json_name = 'params_plas_obs138.json'
 
 indexes_1 = 120
 
