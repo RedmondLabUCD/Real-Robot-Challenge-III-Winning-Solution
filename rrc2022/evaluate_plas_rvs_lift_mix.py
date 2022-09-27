@@ -1,4 +1,4 @@
-"""
+,map_location=torch.device('cpu')"""
 Based on https://github.com/sfujim/BCQ
 """
 import numpy as np
@@ -148,7 +148,7 @@ class VAEModule(object):
 
     def load(self, filename, directory):
         print('%s/%s_vae.pth' % (directory, filename))
-        self.vae.load_state_dict(torch.load('%s/%s_vae.pth' % (directory, filename), map_location=device))
+        self.vae.load_state_dict(torch.load('%s/%s_vae.pth' % (directory, filename), map_location=torch.device('cpu')))
 
 
 class Latent(object):
@@ -178,12 +178,12 @@ class Latent(object):
         return action.cpu().data.numpy().flatten()
 
     def load(self, filename, directory):
-        self.critic.load_state_dict(torch.load('%s/%s_critic.pth' % (directory, filename)))
-        self.critic_optimizer.load_state_dict(torch.load('%s/%s_critic_optimizer.pth' % (directory, filename)))
+        self.critic.load_state_dict(torch.load('%s/%s_critic.pth' % (directory, filename),map_location=torch.device('cpu')))
+        self.critic_optimizer.load_state_dict(torch.load('%s/%s_critic_optimizer.pth' % (directory, filename),map_location=torch.device('cpu')))
         self.critic_target = copy.deepcopy(self.critic)
 
-        self.actor.load_state_dict(torch.load('%s/%s_actor.pth' % (directory, filename)))
-        self.actor_optimizer.load_state_dict(torch.load('%s/%s_actor_optimizer.pth' % (directory, filename)))
+        self.actor.load_state_dict(torch.load('%s/%s_actor.pth' % (directory, filename),map_location=torch.device('cpu')))
+        self.actor_optimizer.load_state_dict(torch.load('%s/%s_actor_optimizer.pth' % (directory, filename),map_location=torch.device('cpu')))
         self.actor_target = copy.deepcopy(self.actor)
 
 
@@ -213,12 +213,12 @@ class LatentPerturbation(object):
         return action.cpu().data.numpy().flatten()
 
     def load(self, filename, directory):
-        self.critic.load_state_dict(torch.load('%s/%s_critic.pth' % (directory, filename)))
-        self.critic_optimizer.load_state_dict(torch.load('%s/%s_critic_optimizer.pth' % (directory, filename)))
+        self.critic.load_state_dict(torch.load('%s/%s_critic.pth' % (directory, filename),map_location=torch.device('cpu')))
+        self.critic_optimizer.load_state_dict(torch.load('%s/%s_critic_optimizer.pth' % (directory, filename),map_location=torch.device('cpu')))
         self.critic_target = copy.deepcopy(self.critic)
 
-        self.actor.load_state_dict(torch.load('%s/%s_actor.pth' % (directory, filename)))
-        self.actor_optimizer.load_state_dict(torch.load('%s/%s_actor_optimizer.pth' % (directory, filename)))
+        self.actor.load_state_dict(torch.load('%s/%s_actor.pth' % (directory, filename),map_location=torch.device('cpu')))
+        self.actor_optimizer.load_state_dict(torch.load('%s/%s_actor_optimizer.pth' % (directory, filename),map_location=torch.device('cpu')))
         self.actor_target = copy.deepcopy(self.actor)
 
 class TorchBasePolicy(PolicyBase):
