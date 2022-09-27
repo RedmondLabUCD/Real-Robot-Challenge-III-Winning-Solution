@@ -246,9 +246,8 @@ class TorchBasePolicy(PolicyBase):
 
     def get_action(self, observation):
         observation = np.concatenate((np.array(observation),np.array(observation[33:33+24])))
-        t1 = time.time()
         action = self.policy.select_action(observation)
-        print(time.time()-t1)
+        print(action)
         return action
 
 class LiftMixedPolicy(TorchBasePolicy):
