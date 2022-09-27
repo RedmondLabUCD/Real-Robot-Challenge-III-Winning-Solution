@@ -10,6 +10,9 @@ from rrc_2022_datasets import PolicyBase
 from . import policies
 import time
 
+filename='model_9271816'
+directory = '/userhome'
+
 device = torch.device("cpu")
 
 class Actor(nn.Module):
@@ -217,9 +220,6 @@ class LatentPerturbation(object):
         self.actor.load_state_dict(torch.load('%s/%s_actor.pth' % (directory, filename)))
         self.actor_optimizer.load_state_dict(torch.load('%s/%s_actor_optimizer.pth' % (directory, filename)))
         self.actor_target = copy.deepcopy(self.actor)
-
-filename='model_9271816'
-directory = '/userhome'
 
 class TorchBasePolicy(PolicyBase):
     def __init__(
