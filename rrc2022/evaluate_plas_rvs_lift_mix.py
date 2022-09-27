@@ -1,6 +1,3 @@
-,map_location=torch.device('cpu')"""
-Based on https://github.com/sfujim/BCQ
-"""
 import numpy as np
 import torch
 import torch.nn as nn
