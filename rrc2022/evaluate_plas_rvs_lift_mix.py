@@ -10,10 +10,7 @@ from rrc_2022_datasets import PolicyBase
 from . import policies
 import time
 
-
 device = torch.device("cpu")
-
-
 
 class Actor(nn.Module):
     def __init__(self, state_dim, action_dim, max_action):
