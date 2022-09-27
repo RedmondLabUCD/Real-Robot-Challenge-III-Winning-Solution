@@ -226,9 +226,7 @@ class TorchBasePolicy(PolicyBase):
         self,
         action_space,
         observation_space,
-        episode_length,
-        model_path,
-        json_path,
+        episode_length
     ):
         self.action_space = action_space
         self.device = "cpu"
