@@ -6,7 +6,7 @@ import copy
 from rrc_2022_datasets import PolicyBase
 import time
 
-filename='model_9271816'
+filename='model_9290856'
 normname = 'norm_9290856.npy'
 directory = '/userhome'
 
