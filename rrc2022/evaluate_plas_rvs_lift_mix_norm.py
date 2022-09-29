@@ -6,7 +6,7 @@ import copy
 from rrc_2022_datasets import PolicyBase
 import time
 
-filename='model_9290856'
+filename='model_9271816'
 normname = 'norm_9290856.npy'
 directory = '/userhome'
 
@@ -46,37 +46,6 @@ class Actor(nn.Module):
         a = F.relu(self.l1(state))
         a = F.relu(self.l2(a))
         return self.max_action * torch.tanh(self.l3(a))
-
-class Critic(nn.Module):
-    def __init__(self, state_dim, action_dim):
-        super(Critic, self).__init__()
-
-        self.hidden_size = (400, 300)
-
-        self.l1 = nn.Linear(state_dim + action_dim, self.hidden_size[0])
-        self.l2 = nn.Linear(self.hidden_size[0], self.hidden_size[1])
-        self.l3 = nn.Linear(self.hidden_size[1], 1)
-
-        self.l4 = nn.Linear(state_dim + action_dim, self.hidden_size[0])
-        self.l5 = nn.Linear(self.hidden_size[0], self.hidden_size[1])
-        self.l6 = nn.Linear(self.hidden_size[1], 1)
-
-    def forward(self, state, action):
-        q1 = F.relu(self.l1(torch.cat([state, action], 1)))
-        q1 = F.relu(self.l2(q1))
-        q1 = self.l3(q1)
-
-        q2 = F.relu(self.l4(torch.cat([state, action], 1)))
-        q2 = F.relu(self.l5(q2))
-        q2 = self.l6(q2)
-        return q1, q2
-
-    def q1(self, state, action):
-        q1 = F.relu(self.l1(torch.cat([state, action], 1)))
-        q1 = F.relu(self.l2(q1))
-        q1 = self.l3(q1)
-        return q1
-
 
 # Vanilla Variational Auto-Encoder
 class VAE(nn.Module):
