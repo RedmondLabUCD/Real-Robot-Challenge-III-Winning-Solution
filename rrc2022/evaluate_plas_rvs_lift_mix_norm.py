@@ -154,11 +154,11 @@ class TorchBasePolicy(PolicyBase):
         pass  # nothing to do here
 
     def get_action(self, observation):
-        print(observation)
         normed_obs = np.array(self.normlizor.norm(observation))
         normed_goal = np.array(self.normlizor.norm_goal(observation[33:33+24]))
         observation = np.concatenate((normed_obs, normed_goal))
         action = self.policy.select_action(observation)
+        print(action)
         return action
 
 class LiftMixedPolicy(TorchBasePolicy):
