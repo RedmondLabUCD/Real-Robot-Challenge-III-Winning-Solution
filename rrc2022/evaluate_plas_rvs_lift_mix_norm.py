@@ -137,12 +137,6 @@ class Latent(object):
     def __init__(self, vae, state_dim, action_dim, latent_dim, max_action, discount=0.99, tau=0.005,
                  actor_lr=1e-3, critic_lr=1e-3, lmbda=0.75, max_latent_action=2, **kwargs):
         self.actor = Actor(state_dim, latent_dim, max_latent_action).to(device)
-        self.actor_target = copy.deepcopy(self.actor)
-        self.actor_optimizer = torch.optim.Adam(self.actor.parameters(), lr=actor_lr)
-
-        self.critic = Critic(state_dim, action_dim).to(device)
-        self.critic_target = copy.deepcopy(self.critic)
-        self.critic_optimizer = torch.optim.Adam(self.critic.parameters(), lr=critic_lr)
 
         self.latent_dim = latent_dim
         self.vae = vae
@@ -160,13 +154,7 @@ class Latent(object):
         return action.cpu().data.numpy().flatten()
 
     def load(self, filename, directory):
-        self.critic.load_state_dict(torch.load('%s/%s_critic.pth' % (directory, filename),map_location=torch.device('cpu')))
-        self.critic_optimizer.load_state_dict(torch.load('%s/%s_critic_optimizer.pth' % (directory, filename),map_location=torch.device('cpu')))
-        self.critic_target = copy.deepcopy(self.critic)
-
         self.actor.load_state_dict(torch.load('%s/%s_actor.pth' % (directory, filename),map_location=torch.device('cpu')))
-        self.actor_optimizer.load_state_dict(torch.load('%s/%s_actor_optimizer.pth' % (directory, filename),map_location=torch.device('cpu')))
-        self.actor_target = copy.deepcopy(self.actor)
 
 class TorchBasePolicy(PolicyBase):
     def __init__(
