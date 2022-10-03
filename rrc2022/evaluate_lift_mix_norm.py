@@ -5,8 +5,10 @@ import torch.nn as nn
 import numpy as np
 
 ############################
-model_name = 'lift_mix_aug_tune_norm.pth'
-norm_name = 'lift_mix_norm.npy'
+#model_name = 'lift_mix_aug_tune_norm.pth'
+#norm_name = 'lift_mix_norm.npy'
+model_name = 'lift_mix_filter_aug_tune_norm.pth'
+norm_name = 'lift_mix_filter_norm.npy'
 norm_mode = 'std'
 ############################
 
