@@ -5,7 +5,7 @@ import torch.nn as nn
 import time
 
 ############################
-model_name = 'push_mix_aug_tune.pth'
+model_name = 'push_mix_filter_aug_tune.pth'
 ############################
 
 
