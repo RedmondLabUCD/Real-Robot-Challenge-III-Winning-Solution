@@ -11,7 +11,7 @@ Installation
 
     pip install -r requirements.txt
         
-We installed the official RRC 2022 library through local installation method, for more details please see official document. 
+    where we installed the official RRC 2022 library through the local installation method; please see the [official document]([https://www.anaconda.com/products/distribution](https://webdav.tuebingen.mpg.de/real-robot-challenge/2022/docs/simulation_phase/index.html#get-the-software)) for more details. 
 
 
 If you would like to deploy this repo by Apptainer/Singularity image, please download from:
