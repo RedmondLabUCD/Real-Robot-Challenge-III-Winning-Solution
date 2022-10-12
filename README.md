@@ -31,7 +31,7 @@ This process would take 1-2 hours. After this process, you will see a new "save"
 ### Augment the dataset by geometry
 Once the dataset is filtered, or if you are training from the expert dataset. Run the following command(assuming you are processing the lift mixed dataset):
     
-    python dataset_aug.py --task="real_push_mix"
+    python dataset_aug.py --task="real_lift_mix"
     
 This pricess would take 40-60 minutes. After the process, you will see a new **xxx_aug.npy** file.
 
