@@ -38,7 +38,7 @@ This pricess would take 40-60 minutes. After the process, you will see a new **x
 ### Train BC models
 Note: The normalization only works for the lift task and does not work for the push. Assuming you are training the lift mixed task, run:
     
-    python main_bc_train_tune.py --exp-name="real_push_mix_test1" --task="real_push_mix" --norm=1
+    python main_bc_train_tune.py --exp-name="real_push_mix_test1" --task="real_lift_mix" --norm=1
     
 Once this process finished, you will see trained models in **"./save/real_lift_mix/models/xxx_tune"**.
 
