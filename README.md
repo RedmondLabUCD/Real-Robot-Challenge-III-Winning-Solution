@@ -9,7 +9,7 @@ Installation
 
 **2.** Activate your vitural environment(or others) and run:
 
-    singularity run /path/to/user_image.sif mpirun -np 8 python3 train.py --exp-dir='reproduce' --n-epochs=300 2>&1 | tee reproduce.log
+    pip install -r requirements.txt
         
 We installed the official RRC 2022 library through local installation method, for more details please see official document. 
 
