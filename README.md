@@ -5,7 +5,10 @@ This repository includes the source python scripts of our solutions to RRC 2022.
 
 Installation
 ----------------
-*1.* Our implementations are tested only on [Anadonda](https://www.anaconda.com/products/distribution). We recommend you install Anaconda if you would reproduce our work, although other development environments should also work.
+**1.** Our implementations are tested only on [Anadonda](https://www.anaconda.com/products/distribution). We recommend you install Anaconda if you would reproduce our work, although other development environments should also work.
+**2.** Activate your vitural environment(or others) and run:
+        pip install -r requirements.txt 
+We installed the official RRC 2022 library through local installation method, for more details please see official document. 
 
 
 If you would like to deploy this repo by Apptainer/Singularity image, please download from:
