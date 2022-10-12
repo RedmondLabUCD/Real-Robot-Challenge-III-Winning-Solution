@@ -22,9 +22,28 @@ In our experiment, we mainly has three part.
 Because the RRC dataset is large, our approach for processing the mixed datasets requires a machine with 16GB RAM, whereas for the expert datasets, we require 32GB. To save the RAM, we keep saving the file on SSD from RAM and load it in the next iteration; hence you should have at least 50GB of free space left on your SSD.
 
 ### Filter the mixed dataset
-Only the mixed datasets need to be filtered, so this step won't work for the expert dataset. If you are trying the filter the expert datasets, some error will be raised. Assuming you are filtering the lift mixed dataset, activate your vertiral environment and run the following command. This process would take 1-2 hours. After this process, you will see a new "save" folder which include all history files during training and filtereing. Now you can delete everying except "turn_final_positive.npy" if you want to save SSD space.
+Only the mixed datasets need to be filtered, and this step will not work for the expert dataset. Some errors will be raised if you are trying to filter the expert datasets. Assuming you filter the lift mixed dataset, activate your virtual environment and run the following command.
     
     python dataset_filter.py --task="real_lift_mix"
     
+This process would take 1-2 hours. After this process, you will see a new "save" folder that includes all training and filtering history files. Now you can delete everything except!!! **turn_final_positive.npy** if you want to save SSD space.
+    
 ### Augment the dataset by geometry
-Once the dataset is filtered
+Once the dataset is filtered, or if you are training from the expert dataset. Run the following command(assuming you are processing the lift mixed dataset):
+    
+    python dataset_aug.py --task="real_push_mix"
+    
+This pricess would take 40-60 minutes. After the process, you will see a new **xxx_aug.npy** file.
+
+### Train BC models
+Note: The normalization only works for the lift task and does not work for the push. Assuming you are training the lift mixed task, run:
+    
+    python main_bc_train_tune.py --exp-name="real_push_mix_test1" --task="real_push_mix" --norm=1
+    
+Once this process finished, you will see trained models in **"./save/real_lift_mix/models/xxx_tune"**.
+
+## Deploy the model on the real robot
+The deployment scripts is in under "rrc2022" folder. Steps:
+1) Upload the trained BC model and the normalization parameters on  RRC robot cluster(more details see the [website](https://webdav.tuebingen.mpg.de/real-robot-challenge/2022/docs/robot_phase/submission_system.html)). You can find the model in **"./save/real_lift_mix/models/xxx_tune/ckpt_50.pth"** and you can find the normalization parameters in **"./save/real_lift_mix/datasets/train_aug_norm_params.npy"**.
+2) Change the file's name in the deployment script to make them direct to the models you submitted; you can do this by easily editing the files located in rrc2022 on GitHub.
+3) Submit jobs to the system.
