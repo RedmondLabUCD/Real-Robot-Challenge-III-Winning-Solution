@@ -53,9 +53,9 @@ def main_augment(args):
                                                                 ccw_save_path], save_path=aug_save_path)
     
     elif args.diff == 'expert':
-        save_path = './save/{args.task}/datasets/positive.npy'
-        cw_save_path = './save/{args.task}/datasets/positive_cw120.npy'
-        ccw_save_path = './save/{args.task}/datasets/positive_ccw120.npy'
+        save_path = f'./save/{args.task}/datasets/positive.npy'
+        cw_save_path = f'./save/{args.task}/datasets/positive_cw120.npy'
+        ccw_save_path = f'./save/{args.task}/datasets/positive_ccw120.npy'
         if args.task_type == 'push':
             for i in [0, 1]:
                 dataset = rrc_dataset_handler.load_rrc_raw_dataset(args)
