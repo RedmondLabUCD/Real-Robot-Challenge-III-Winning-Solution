@@ -1,6 +1,8 @@
 git+https://github.com/rr-learning/rrc_2022_datasets.git@v1
 d3rlpy
+git+https://github.com/rail-berkeley/d4rl@master#egg=d4rl
 numpy
+pandas
 tdqm
 torch
 torchvision
