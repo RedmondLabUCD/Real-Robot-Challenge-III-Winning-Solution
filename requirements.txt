@@ -6,4 +6,3 @@ torch
 torchvision
 scipy
 gym
-
