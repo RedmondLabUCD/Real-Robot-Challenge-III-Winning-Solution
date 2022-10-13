@@ -14,7 +14,7 @@ This repository includes the source python scripts of our solutions to RRC 2022.
 
 
 ## Installation
-**1.** Our implementations are tested only on [Anadonda](https://www.anaconda.com/products/distribution). We recommend you install Anaconda if you would reproduce our work, although other development environments should also work.
+**1.** Our implementations are tested only on [Anadonda](https://www.anaconda.com/products/distribution). We recommend you install Anaconda if you would reproduce our work, although other development environments should also work. Our python version is 3.8.13
 
 **2.** Activate your vitural environment(or others) and run:
 
