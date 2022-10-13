@@ -1,0 +1,9 @@
+git+https://github.com/rr-learning/rrc_2022_datasets.git@v1
+d3rlpy
+numpy
+tdqm
+torch
+torchvision
+scipy
+gym
+
