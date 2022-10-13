@@ -65,7 +65,7 @@ def rrc_task_handler(args):
         args.action_dim = 9
         args.turns = 5
         args.confs = [1450, 1450, 1450, 1390]
-    elif args.task == "real_lift_expert":
+    elif args.task == "real_lift_exp":
         args.task_type = 'lift'
         args.diff = 'expert'
         args.obs_dim = 139
@@ -77,7 +77,7 @@ def rrc_task_handler(args):
         args.action_dim = 9
         args.turns = 4
         args.confs = [730, 730, 500]
-    elif args.task == "real_push_expert":
+    elif args.task == "real_push_exp":
         args.task_type = 'push'
         args.diff = 'expert'
         args.obs_dim = 97
