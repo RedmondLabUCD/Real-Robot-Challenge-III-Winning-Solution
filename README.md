@@ -37,6 +37,8 @@ Only the mixed datasets need to be filtered, and this step will not work for the
     
     python dataset_filter.py --task="real_lift_mix"
     
+**!!!Note!!!: The abbreviations of four tasks are "real_lift_mix", "real_lift_exp", "real_push_mix", "real_push_mix".**
+
 This process would take 1-2 hours. After this process, you will see a new "save" folder that includes all training and filtering history files. Now you can delete everything except!!! **turn_final_positive.npy** if you want to save SSD space.
     
 ### Augment the dataset by geometry
@@ -51,7 +53,7 @@ Note: The normalization only works for the lift task and does not work for the p
     
     python main_bc_train_tune.py --exp-name="real_push_mix_test1" --task="real_lift_mix" --norm=1
     
-Once this process finished, you will see trained models in **"./save/real_lift_mix/models/xxx_tune"**.
+Once this process finished, you will see trained models in **"./save/real_lift_mix/models/xxx_tune"**, make you enter the correct name.
 
 ## Deploy the model on the real robot
 The deployment scripts is in under "rrc2022" folder. Steps:
