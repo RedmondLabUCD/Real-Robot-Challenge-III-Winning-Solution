@@ -1,6 +1,17 @@
 # RRC 2022 solution --- team excludedrice
 This repository includes the source python scripts of our solutions to RRC 2022.
 
+## Contents
+- rrc2022: This folder contains the scripts for deploying the trained models on the real robot cluster.
+- trained_models: This folder contains our final submitted models to the RRC2022.
+- dataset_aug.py: The dataset augmentation script.
+- dataset_filter.py: The main scripts for filtering the mixed dataset.
+- main_bc_train_tune.py: The main scripts for training the BC models.
+- models.py: The neural networks.
+- trainer.py: The implementations of Behaviour Cloning(BC)
+- utils.py: Tools.
+- requirements.txt: The required python libraries.
+
 
 ## Installation
 **1.** Our implementations are tested only on [Anadonda](https://www.anaconda.com/products/distribution). We recommend you install Anaconda if you would reproduce our work, although other development environments should also work.
