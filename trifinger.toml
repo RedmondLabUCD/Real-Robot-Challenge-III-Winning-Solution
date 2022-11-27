@@ -1,6 +1,6 @@
 [rrc2022]
-task = "push"  # "push" or "lift"
-dataset_type = "expert"  # "expert or "mixed"
+task = "lift"  # "push" or "lift"
+dataset_type = "mix"  # "expert or "mixed"
 
 push_mixed_policy = "rrc2022.evaluate_push_mix.PushMixedPolicy"
 push_expert_policy = "rrc2022.evaluate_push_exp.PushExpertPolicy"
