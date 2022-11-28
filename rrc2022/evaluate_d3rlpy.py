@@ -4,7 +4,7 @@
 """Example policy for Real Robot Challenge 2022"""
 import torch
 from rrc_2022_datasets import PolicyBase
-from d3rlpy.algos import TD3PlusBC as algo
+from d3rlpy.algos import BC as algo
 
 model_name = 'push_mix_bc_seed813.pth'
 json_name = 'push_mix_bc_seed813.json'
