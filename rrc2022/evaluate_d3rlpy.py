@@ -6,8 +6,8 @@ import torch
 from rrc_2022_datasets import PolicyBase
 from d3rlpy.algos import TD3PlusBC as algo
 
-model_name = 'lift_mix_td3bc_seed813.pth'
-json_name = 'lift_mix_td3bc_seed813.json'
+model_name = 'push_mix_bc_seed813.pth'
+json_name = 'push_mix_bc_seed813.json'
 
 class TorchBasePolicy(PolicyBase):
     def __init__(
