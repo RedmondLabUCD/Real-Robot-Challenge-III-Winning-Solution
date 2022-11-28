@@ -2,7 +2,13 @@
 task = "push"  # "push" or "lift"
 dataset_type = "mixed"  # "expert or "mixed"
 
-push_mixed_policy = "rrc2022.evaluate_push_mix.PushMixedPolicy"
-push_expert_policy = "rrc2022.evaluate_push_exp.PushExpertPolicy"
-lift_mixed_policy = "rrc2022.evaluate_lift_mix_norm.LiftMixedPolicy"
-lift_expert_policy = "rrc2022.evaluate_lift_exp_norm.LiftExpertPolicy"
+push_mixed_policy = "rrc2022.evaluate_d3rlpy.PushMixedPolicy"
+push_expert_policy = "rrc2022.evaluate_d3rlpy.PushExpertPolicy"
+lift_mixed_policy = "rrc2022.evaluate_d3rlpy.LiftMixedPolicy"
+lift_expert_policy = "rrc2022.evaluate_d3rlpy.LiftExpertPolicy"
+
+
+#push_mixed_policy = "rrc2022.evaluate_push_mix.PushMixedPolicy"
+#push_expert_policy = "rrc2022.evaluate_push_exp.PushExpertPolicy"
+#lift_mixed_policy = "rrc2022.evaluate_lift_mix_norm.LiftMixedPolicy"
+#lift_expert_policy = "rrc2022.evaluate_lift_exp_norm.LiftExpertPolicy"
