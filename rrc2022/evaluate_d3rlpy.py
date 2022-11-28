@@ -6,7 +6,7 @@ import torch
 from rrc_2022_datasets import PolicyBase
 from d3rlpy.algos import BC as algo
 
-model_name = 'push_mix_bc_seed813.pt'
+model_name = 'push_mix_bc_seed114.pt'
 json_name = 'push_mix_bc_seed813.json'
 
 class TorchBasePolicy(PolicyBase):
