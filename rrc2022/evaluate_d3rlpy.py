@@ -6,10 +6,11 @@ import torch
 from rrc_2022_datasets import PolicyBase
 #from d3rlpy.algos import BC as algo
 #from d3rlpy.algos import PLAS as algo
-from d3rlpy.algos import CRR as algo
+#from d3rlpy.algos import CRR as algo
+from d3rlpy.algos import TD3PlusBC as algo
 
-model_name = 'crr_mixed_ok.pt'
-json_name = 'crr_mixed_ok.json'
+model_name = 'td3bc_ok.pt'
+json_name = 'td3bc_ok.json'
 
 class TorchBasePolicy(PolicyBase):
     def __init__(
