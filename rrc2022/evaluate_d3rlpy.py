@@ -8,8 +8,8 @@ from rrc_2022_datasets import PolicyBase
 #from d3rlpy.algos import PLAS as algo
 from d3rlpy.algos import CRR as algo
 
-model_name = 'plas_ok.pt'
-json_name = 'plas_ok.json'
+model_name = 'crr_mixed_ok.pt'
+json_name = 'crr_mixed_ok.json'
 
 class TorchBasePolicy(PolicyBase):
     def __init__(
