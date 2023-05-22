@@ -5,13 +5,13 @@
 import torch
 from rrc_2022_datasets import PolicyBase
 #from d3rlpy.algos import BC as algo
-#from d3rlpy.algos import PLAS as algo
+from d3rlpy.algos import PLAS as algo
 #from d3rlpy.algos import CRR as algo
 #from d3rlpy.algos import TD3PlusBC as algo
-from d3rlpy.algos import IQL as algo
+#from d3rlpy.algos import IQL as algo
 
-model_name = 'iql_mixed_ok.pt'
-json_name = 'iql_mixed_ok.json'
+model_name = 'plas_ok.pt'
+json_name = 'plas_ok.json'
 
 class TorchBasePolicy(PolicyBase):
     def __init__(
