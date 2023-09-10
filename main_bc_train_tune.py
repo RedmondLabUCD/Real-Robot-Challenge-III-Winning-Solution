@@ -74,7 +74,7 @@ if __name__ == '__main__':
     parser.add_argument('--bc-tune-epochs', type=int, default=50,help='How many epochs to tune the BC')
     parser.add_argument('--bc-batch-size', type=int,default=1024, help='Learning rate value')
     parser.add_argument('--bc-train-learning-rate', type=float,default=0.001, help='Learning rate value')
-    parser.add_argument('--bc-tune-learning-rate', type=float,default=0.0008, help='Learning rate value')
+    parser.add_argument('--bc-tune-learning-rate', type=float,default=0.0002, help='Learning rate value')
     
     parser.add_argument('--save-path', default=None,help='The path for saving the dataset')
     parser.add_argument('--require-dataset-process', default=True)
