@@ -7,7 +7,7 @@ import numpy as np
 ############################
 #model_name = 'lift_mix_aug_tune_norm.pth'
 #norm_name = 'lift_mix_norm.npy'
-model_name = 'model_q3.pth'
+model_name = 'model_q1.pth'
 norm_name = 'params_q.npy'
 norm_mode = 'std'
 ############################
