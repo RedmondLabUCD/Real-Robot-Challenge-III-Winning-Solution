@@ -60,3 +60,6 @@ The deployment scripts is in under "rrc2022" folder. Steps:
 1) Upload the trained BC model and the normalization parameters on  RRC robot cluster(more details see the [website](https://webdav.tuebingen.mpg.de/real-robot-challenge/2022/docs/robot_phase/submission_system.html)). You can find the model in **"./save/real_lift_mix/models/xxx_tune/ckpt_50.pth"** and you can find the normalization parameters in **"./save/real_lift_mix/datasets/train_aug_norm_params.npy"**.
 2) Change the file's name in the deployment script to make them direct to the models you submitted; you can do this by easily editing the files located in rrc2022 on GitHub.
 3) Submit jobs to the system.
+4) 
+
+# Discussion extending...
