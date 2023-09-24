@@ -112,10 +112,10 @@ This section presents the raw evaluation results for **_TABLE. 1_**, offering a 
 ## Citation 
 Pre-print version of the paper is avaliable [here](https://arxiv.org/abs/2301.13019v2).
 <pre>
-@article{wang2023winning,
-  title={Winning Solution of Real Robot Challenge III},
+@article{rrc_iii_solution,
+  title={Identifying Expert Behavior in Offline Training Datasets Improves Behavioral Cloning of Robotic Manipulation Policies},
   author={Wang, Qiang and McCarthy, Robert and Bulens, David Cordova and Redmond, Stephen J},
-  journal={arXiv preprint arXiv:2301.13019},
+  journal={arXiv preprint arXiv:2301.13019v2},
   year={2023}
 }
 </pre>
