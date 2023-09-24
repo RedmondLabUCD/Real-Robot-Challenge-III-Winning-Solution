@@ -1,5 +1,5 @@
-# RRC 2022 solution --- team excludedrice
-This repository includes the source python scripts of our solutions to RRC 2022.
+# Real Robot Challenge III winning solution --- team excludedrice
+This repository contains the source Python scripts for our solutions to Real Robot Challenge (RRC) III. Furthermore, it functions as the website hosting the code and presenting an extension of the discussion from our paper, which is based on the results we achieved in RRC III. (We will put the link of the paper once it get accpted)
 
 ## Contents
 - rrc2022: This folder contains the scripts for deploying the trained models on the real robot cluster.
