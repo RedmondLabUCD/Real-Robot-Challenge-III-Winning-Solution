@@ -62,4 +62,5 @@ The deployment scripts is in under "rrc2022" folder. Steps:
 3) Submit jobs to the system.
 4) 
 
-# Discussion extending...
+# Discussion on the efficacy of our train-and-tune methodology
+In the study presented in [1], it was found that decreasing the learning rate of BC leads to improved policies for physical robots. To verify that the performance improvement from our "train-and-tune" approach wasn't merely due to a reduced learning rate in the tuning phase, we carried out an extensive investigation. Due to space constraints in our article, we had to place this part of the discussion here. The origin of this part of the research stemmed from the valuable feedback given by reviewers from [IEEE Robotics and Automation Letters](https://www.ieee-ras.org/publications/ra-l). Their insights during the review phase helped us identify this issue, for which we are profoundly grateful
