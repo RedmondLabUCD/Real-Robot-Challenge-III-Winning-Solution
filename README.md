@@ -105,4 +105,16 @@ This section presents the raw evaluation results for **_TABLE. 1_**, offering a 
     <img src="images/results_raw.png" alt="Example Image" width="500">
 </div>
 
-##
+## Reference
+[1] A. Mandlekar, D. Xu, J. Wong, S. Nasiriany, C. Wang, R. Kulkarni, L. Fei-Fei, S. Savarese, Y. Zhu, and R. Martín-Martín, “What matters in learning from offline human demonstrations for robot manipulation,” arXiv preprint arXiv:2108.03298, 2021.
+
+## Citation 
+Pre-print version of the paper is avaliable [here](https://arxiv.org/abs/2301.13019v2).
+<pre>
+@article{wang2023winning,
+  title={Winning Solution of Real Robot Challenge III},
+  author={Wang, Qiang and McCarthy, Robert and Bulens, David Cordova and Redmond, Stephen J},
+  journal={arXiv preprint arXiv:2301.13019},
+  year={2023}
+}
+</pre>
