@@ -1,6 +1,7 @@
-# Real Robot Challenge III winning solution --- team excludedrice
-This repository contains the source Python scripts for our solutions to Real Robot Challenge (RRC) III. Furthermore, it functions as the website hosting the code and presenting an extension of the discussion from our paper, which is based on the results we achieved in RRC III. (We will put the link of the paper once it get accpted)
+This repository contains the detailed source [Python scripts](#python-scripts) for reproducing the results presented in paper [Identifying Expert Behavior in Offline Training Datasets Improves Behavioral Cloning of Robotic Manipulation Policies](https://arxiv.org/abs/2301.13019v2). Additionally, it serves as supplementary material, hosting an [extension of the results and discussions](#discussion-on-the-efficacy-of our-train-and-tune methodology) from our paper due to the page limitations of the RAL paper. We would like to confirm that this website is exclusively associated with our paper and will remain permanently accessible.
 
+
+# Python scripts
 ## Contents
 - rrc2022: This folder contains the scripts for deploying the trained models on the real robot cluster.
 - trained_models: This folder contains our final submitted models to the RRC2022.
