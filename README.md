@@ -69,15 +69,15 @@ In the study presented in [1], it was found that decreasing the learning rate of
 Here, we reached out to the competition organizers once again to request access to the robots. We are grateful that they granted the access again. Unfortunately, the evaluation environment differs slightly from the competition setting: only 3 out of the 6 robots are currently available, whereas all 6 were accessible during the competition.
 
 ## Experiments
-We conduct the following experiments for evaluations: 
+We trained the following models (Note: All models were tested to assess overfitting, and none exhibited signs of overfitting): 
 1) **Our Solution**: Given the change in the number of available robots, we cannot rely on the competition results for a fair comparison here. Instead, we re-evaluated our winning behavioural cloning (BC) model, which was initially trained for $\sim2.5 \times 10 ^{5}$ steps with a batch size of 1024, using an augmented dataset and a higher learning rate of $1 \times 10 ^{-3}$; it was then fine-tuned on the raw dataset for shorter duration of around $\sim8 \times 10 ^{4}$ steps, maintaining the same batch size of 1024 but reducing the learning rate to $2 \times 10 ^{-4}$.
 2) **Training with reduced learning rate and extended training duration**: We trained a BC model on the augmented dataset for $\sim5 \times 10 ^{5}$ steps (batch size of 1024), which is twice the duration mentioned in the previous approach. We employed a smaller learning rate of $2 \times 10 ^{-4}$.
 3) **Fine-tuning on the augmented dataset with reduced learning rate**: The initial training stage is the same as described in approach 1), with the key difference being that the fine-tuning process is conducted on the augmented dataset rather than the raw dataset. The learning rate, batch size, and training duration remain identical to those in approach 1).
 
-Note: All models were tested to assess overfitting, and none exhibited signs of overfitting.
+We trained three models, each with a distinct random seed, for each of the scenarios mentioned above. Each model was evaluated on different robots, with 20 trajectories for each robot.
 
 ## Results and Discussion
-The evaluation results are shown in **_TABLE. 1_**. Our model (Model 1) outperforms the other two comparison groups both overall and individually for each robot. It's worth noting that the same model might show different performances on different robots. This can primarily be attributed to the inherent flaws of the actual mechanical systems, such as deviations in electronic components, inconsistencies in physical connections, and wear and tear during use. These factors are hard to avoid and cannot be overlooked. Based on this, we speculate that even with consistent design, the physical characteristics of different fingers on the same trifinger robot might still differ, leading to a noticeable bias between its state space and rotationally symmetric state space.
+The evaluation results are shown in **_TABLE. 1_** (see **_TABLE. 2_** for the raw and detailed evaluation results before averaging). Our model (Model 1) outperforms the other two comparison groups both overall and individually for each robot. It's worth noting that the same model might show different performances on different robots. This can primarily be attributed to the inherent flaws of the actual mechanical systems, such as deviations in electronic components, inconsistencies in physical connections, and wear and tear during use. These factors are hard to avoid and cannot be overlooked. Based on this, we speculate that even with consistent design, the physical characteristics of different fingers on the same trifinger robot might still differ, leading to a noticeable bias between its state space and rotationally symmetric state space.
 
 Therefore, theoretically, augmenting the data may generate data that does not exist in real-world scenarios, potentially causing the model to learn policies that deviate from the actual data distribution. Despite this, this data augmentation method indeed enhances the model's robustness. Since real-world scenarios are continuous and complex, the starting positions and goals in each trajectory are highly likely to vary. Hence, the collected data only covers a (small) part of the entire possible state space. When deploying the model, it might encounter states or goals that deviate from the training dataset.  Through our data augmentation method, we can attempt to increase the coverage of the state space in the dataset, ensuring that models trained on augmented datasets are more likely to encounter a broader range of scenarios before deployment. This, in turn, helps reduce the compound error of BC.
 
@@ -96,3 +96,13 @@ Therefore, theoretically, augmenting the data may generate data that does not ex
 </div>
 
 Although the augmented dataset can provide a broader perspective for the model when finding solution trajectories, it's important to note that due to differences between the actual state space and the symmetrical augmented state space, the model's performance might decline when handling specific detailed manipulations.
+
+## Raw evaluation results
+This section presents the raw evaluation results for **_TABLE. 1_**, offering a detailed overview of the outcomes for each seed and each robot prior to averaging. It's important to note that, in accordance with the RRC evaluation protocol, each evaluation is assigned 5 random trajectories, and the output is then averaged. Consequently, each cell in the table represents the average of 5 trajectories.
+<div align="center">
+    <figcaption><i><b>TABLE. 2 </b>The raw evaluation results of <b>TABLE. 1 </b></i></figcaption>
+    <br>
+    <img src="images/results_raw.png" alt="Example Image" width="500">
+</div>
+
+##
